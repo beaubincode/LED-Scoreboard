@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED Scoreboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="scoreboard" aria-label="Scoreboard">
+      <header class="team-headings">
+        <div>HOME</div>
+        <div>GUEST</div>
+      </header>
+
+      <section class="score-area" aria-label="Score">
+        <div class="score" id="homeScore" aria-label="Home score">09</div>
+        <div class="colon" aria-hidden="true">:</div>
+        <div class="score" id="guestScore" aria-label="Guest score">01</div>
+      </section>
+
+      <footer class="timer-area">
+        <span id="timer" aria-label="Game clock">00:03</span>
+      </footer>
+    </section>
+
+    <section class="controls" aria-label="Scoreboard controls">
+      <div class="control-group">
+        <h2>Home</h2>
+        <button data-team="home" data-change="-1" aria-label="Decrease home score">−</button>
+        <button data-team="home" data-change="1">+1</button>
+        <button data-team="home" data-change="2">+2</button>
+        <button data-team="home" data-change="3">+3</button>
+      </div>
+      <div class="control-group">
+        <h2>Guest</h2>
+        <button data-team="guest" data-change="-1" aria-label="Decrease guest score">−</button>
+        <button data-team="guest" data-change="1">+1</button>
+        <button data-team="guest" data-change="2">+2</button>
+        <button data-team="guest" data-change="3">+3</button>
+      </div>
+      <div class="clock-controls">
+        <h2>Game clock</h2>
+        <label for="minutes">Minutes</label>
+        <input id="minutes" type="number" min="0" max="99" value="0" />
+        <label for="seconds">Seconds</label>
+        <input id="seconds" type="number" min="0" max="59" value="3" />
+        <button id="setClock">Set clock</button>
+        <button id="startStop">Start</button>
+        <button id="reset">Reset scores</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
